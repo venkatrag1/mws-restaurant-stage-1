@@ -7,6 +7,15 @@ body,td,th,p{
 	color: #333;
 	line-height: 1.5;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+img, embed, object, video{
+	max-width: 100%;
+}
+
 body {
 	background-color: #fdfdfd;
 	margin: 0;
