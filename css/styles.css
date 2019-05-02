@@ -288,7 +288,16 @@ nav h1 a {
     #breadcrumb {
       width: 100%;
     }
+    .inside #maincontent {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
     .inside #map-container {
+      position: relative;
+      top: 130px;
+      z-index: 999;
+      height: 300px;
       width: 100%;
     }
     #restaurant-container, #reviews-container {
