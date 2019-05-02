@@ -1,19 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
-
-body,td,th,p{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
-	line-height: 1.5;
-}
-
 * {
 	box-sizing: border-box;
 }
 
 img, embed, object, video{
 	max-width: 100%;
+}
+
+body,td,th,p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #333;
+	line-height: 1.5;
 }
 
 body {
@@ -281,4 +280,18 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Media Queries ====================== */
+
+@media screen and (max-width: 400px) {
+    #breadcrumb {
+      width: 100%;
+    }
+    .inside #map-container {
+      width: 100%;
+    }
+    #restaurant-container, #reviews-container {
+      width: 100%;
+    }
 }
