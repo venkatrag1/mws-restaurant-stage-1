@@ -314,4 +314,7 @@ nav h1 a {
     .filter-options {
       flex-direction: column;
     }
+    .inside #footer {
+      width: 100%;
+}
 }
