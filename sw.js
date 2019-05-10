@@ -1,5 +1,5 @@
 
-let myCache = 'restaurant-reviews-v1';
+let staticCacheName = 'restaurant-reviews-v1';
 
 self.addEventListener('install', function (event) {
     let urlsToCache = [
@@ -39,4 +39,19 @@ self.addEventListener('fetch', function (event) {
            return fetch(event.request);
        })
    )
+});
+
+self.addEventListener('activate', function(event) {
+	event.waitUntil(
+		caches.keys().then(function(cacheNames) {
+			return Promise.all(
+				cacheNames.filter(function(cacheName) {
+					return cacheName.startsWith('restaurant-reviews') &&
+                        cacheName !== staticCacheName;
+				}).map(function(cacheName) {
+					return caches.delete(cacheName);
+				})
+			);
+		})
+	);
 });
