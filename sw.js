@@ -1,4 +1,4 @@
-
+// Top level service worker to cache all assets
 let staticCacheName = 'restaurant-reviews-v1';
 
 self.addEventListener('install', function (event) {
@@ -25,6 +25,7 @@ self.addEventListener('install', function (event) {
     ];
     event.waitUntil(
         caches.open(staticCacheName).then(function (cache) {
+            // Add URLs request/response to cache during install
             return cache.addAll(urlsToCache);
         })
     );
@@ -36,7 +37,7 @@ self.addEventListener('fetch', function (event) {
            if (response) {
                return response;
            }
-           return fetch(event.request);
+           return fetch(event.request); // Respond from Cache if available else fetch
        })
    )
 });
@@ -47,7 +48,7 @@ self.addEventListener('activate', function(event) {
 			return Promise.all(
 				cacheNames.filter(function(cacheName) {
 					return cacheName.startsWith('restaurant-reviews') &&
-                        cacheName !== staticCacheName;
+                        cacheName !== staticCacheName; // Filter for all restaurant-reviews cache other than currently running version and delete
 				}).map(function(cacheName) {
 					return caches.delete(cacheName);
 				})

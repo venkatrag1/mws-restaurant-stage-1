@@ -77,6 +77,7 @@ initMap = () => {
         zoom: 12,
         scrollWheelZoom: false
       });
+  // TBD- remove pk before publishing on GitHub
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoidnJhbWVzaDEiLCJhIjoiY2p1b2E0ZWdhMDlvdjQzcDc3bzR6YTJuOCJ9.LId9IJWOYChYvsi8Uzb5Sw',
     maxZoom: 18,
@@ -161,6 +162,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  // Set alt as restaurant name for restaurant images
   image.alt = DBHelper.imageAltForRestaurant(restaurant);
   li.append(image);
 
@@ -179,6 +181,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  // Set Arial label for screen reader to mention restaurant name
   more.setAttribute('aria-label', `${restaurant.name} restaurant details`);
   more.setAttribute('role', 'button');
   li.append(more);

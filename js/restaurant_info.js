@@ -21,6 +21,7 @@ initMap = () => {
         zoom: 16,
         scrollWheelZoom: false
       });
+      //TBD- Remove pk before publishing
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
         mapboxToken: 'pk.eyJ1IjoidnJhbWVzaDEiLCJhIjoiY2p1b2E0ZWdhMDlvdjQzcDc3bzR6YTJuOCJ9.LId9IJWOYChYvsi8Uzb5Sw',
         maxZoom: 18,
@@ -89,6 +90,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  // Restaurant image alt is set to restaurant name
   image.alt = DBHelper.imageAltForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
