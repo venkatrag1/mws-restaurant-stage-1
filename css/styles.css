@@ -73,7 +73,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 20pt;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -294,8 +294,7 @@ nav h1 a {
 }
 
 /* ====================== Media Queries ====================== */
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
     #breadcrumb {
       width: 100%;
     }
@@ -314,10 +313,13 @@ nav h1 a {
     #restaurant-container, #reviews-container {
       width: 100%;
     }
-    .filter-options {
-      flex-direction: column;
-    }
     .inside #footer {
       width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .filter-options {
+      flex-direction: column;
     }
 }
