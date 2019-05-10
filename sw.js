@@ -24,7 +24,7 @@ self.addEventListener('install', function (event) {
         '/data/restaurants.json',
     ];
     event.waitUntil(
-        caches.open(myCache).then(function (cache) {
+        caches.open(staticCacheName).then(function (cache) {
             return cache.addAll(urlsToCache);
         })
     );
